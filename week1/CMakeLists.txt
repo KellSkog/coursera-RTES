@@ -26,3 +26,27 @@ add_executable(${TARGET}
                 ${TARGET}/pthread.c)
 target_compile_options(${TARGET} PUBLIC -O0 -g)
 target_link_libraries(${TARGET} -pthread)
+
+set(TARGET rt_thread_improved)
+add_executable(${TARGET}
+                ${TARGET}/pthread.c)
+target_compile_options(${TARGET} PUBLIC -O0 -g)
+target_link_libraries(${TARGET} -pthread)
+
+set(TARGET sequencer)
+add_executable(${TARGET}
+                ${TARGET}/lab1.c)
+target_compile_options(${TARGET} PUBLIC -O0 -g)
+target_link_libraries(${TARGET} -pthread)
+
+set(TARGET simplethread_asignmt)
+add_executable(${TARGET}
+                ${TARGET}/pthread.c)
+target_compile_options(${TARGET} PUBLIC -O0 -g)
+target_link_libraries(${TARGET} -pthread)
+
+set(TARGET assignment2)
+add_executable(${TARGET}
+                ${TARGET}/pthread.c)
+target_compile_options(${TARGET} PUBLIC -O0 -g)
+target_link_libraries(${TARGET} -pthread)
