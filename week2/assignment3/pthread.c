@@ -14,27 +14,20 @@ It's expected to use First Input First Output (FIFO) scheduling mechanism govern
 
 Please find the started code attached for your reference
 */
+#ifndef _GNU_SOURCE
+#error "_GNU_SOURCE definition needed"
+#endif
+
 #include <pthread.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <sched.h>
 #include <syslog.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-#define COUNT 100
 #define STREAM_BUFFER_SIZE 100
-
-typedef struct
-{
-    int threadIdx;
-} threadParams_t;
-
-// POSIX thread declarations and scheduling attributes
-//
-pthread_t threads[2];
-threadParams_t threadParams[2];
-
-// Unsafe global
-int gsum = 0;
+#define NUM_THREADS 128 //thread id [1 ...128]
 
 /// Initialize logging
 int init_logging(void)
@@ -56,51 +49,67 @@ int init_logging(void)
     return 0;
 }
 
-void *incThread(void *threadp)
+typedef struct
 {
-    int i;
-    threadParams_t *threadParams = (threadParams_t *)threadp;
+    int threadIdx;
+} threadParams_t;
 
-    for (i = 0; i < COUNT; i++)
+void *runThread(void *threadp)
+{
+    int sum = 0;
+    threadParams_t *threadParams = (threadParams_t *)threadp;
+    // int threadId = ((threadParams_t *)threadp)->threadIdx;
+    int threadId = threadParams->threadIdx;
+    for (int i = 1; i <= threadId; i++)
     {
-        gsum = gsum + i;
-        syslog(LOG_INFO, "Increment thread idx=%d, gsum=%d\n", threadParams->threadIdx, gsum);
+        sum += i;
     }
-}
-
-void *decThread(void *threadp)
-{
-    int i;
-    threadParams_t *threadParams = (threadParams_t *)threadp;
-
-    for (i = 0; i < COUNT; i++)
-    {
-        gsum = gsum - i;
-        syslog(LOG_INFO, "Decrement thread idx=%d, gsum=%d\n", threadParams->threadIdx, gsum);
+    // Output example Thread idx=10, sum[1...10]=55 Running on core : XYZ
+    syslog(LOG_INFO, "Thread idx=%d, sum[1...%d]=%d Running on core : %d\n",
+           threadId, threadId, sum, sched_getcpu());
+    if (threadId == 99)
+    { // Verify scheduler for one thread
+        int type = sched_getscheduler(getpid());
+        if (type != SCHED_FIFO)
+            printf("Wrong scheduler: %d\n", type);
     }
 }
 
 int main(int argc, char *argv[])
 {
-    int rc;
-    int i = 0;
+    // POSIX thread declarations and scheduling attributes
+    pthread_t threads[NUM_THREADS];
+    threadParams_t threadParams[NUM_THREADS];
+    pthread_attr_t rt_sched_attr[NUM_THREADS];
+    struct sched_param rt_param[NUM_THREADS];
+    struct sched_param main_param;
+    pthread_attr_t main_attr;
+
     if (init_logging() != 0)
     {
         //Log initialization failed
         return -1;
     }
-    threadParams[i].threadIdx = i;
-    pthread_create(&threads[i],               // pointer to thread descriptor
-                   (void *)0,                 // use default attributes
-                   incThread,                 // thread function entry point
-                   (void *)&(threadParams[i]) // parameters to pass in
-    );
-    i++;
 
-    threadParams[i].threadIdx = i;
-    pthread_create(&threads[i], (void *)0, decThread, (void *)&(threadParams[i]));
+    int rt_max_prio = sched_get_priority_max(SCHED_FIFO);
+    main_param.sched_priority = rt_max_prio;
+    if (sched_setscheduler(getpid(), SCHED_FIFO, &main_param) < 0)
+        perror("******** WARNING: sched_setscheduler");
 
-    for (i = 0; i < 2; i++)
+    for (int i = 0; i < NUM_THREADS; i++)
+    {
+        pthread_attr_init(&rt_sched_attr[i]);
+        pthread_attr_setinheritsched(&rt_sched_attr[i], PTHREAD_EXPLICIT_SCHED);
+        pthread_attr_setschedpolicy(&rt_sched_attr[i], SCHED_FIFO);
+        threadParams[i].threadIdx = i + 1;
+        pthread_create(&threads[i],               // pointer to thread descriptor
+                       (void *)0,                 // use default attributes
+                       runThread,                 // thread function entry point
+                       (void *)&(threadParams[i]) // parameters to pass in
+        );
+    }
+
+    for (int i = 0; i < NUM_THREADS; i++)
         pthread_join(threads[i], NULL);
 
     printf("TEST COMPLETE\n");
