@@ -15,6 +15,7 @@ It's expected to use First Input First Output (FIFO) scheduling mechanism govern
 Please find the started code attached for your reference
 */
 #ifndef _GNU_SOURCE
+// Ensure  ISO C89, ISO C99, POSIX.1, POSIX.2, BSD, SVID, X/Open, LFS, and GNU extensions are enabled
 #error "_GNU_SOURCE definition needed"
 #endif
 
@@ -23,8 +24,7 @@ Please find the started code attached for your reference
 #include <stdio.h>
 #include <sched.h>
 #include <syslog.h>
-#include <sys/types.h>
-#include <unistd.h>
+#include <unistd.h> //Provides getpid
 
 #define STREAM_BUFFER_SIZE 100
 #define NUM_THREADS 128 //thread id [1 ...128]
@@ -49,6 +49,7 @@ int init_logging(void)
     return 0;
 }
 
+//Struct of data passed as parameter to thread
 typedef struct
 {
     int threadIdx;
@@ -78,10 +79,9 @@ void *runThread(void *threadp)
 int main(int argc, char *argv[])
 {
     // POSIX thread declarations and scheduling attributes
-    pthread_t threads[NUM_THREADS];
-    threadParams_t threadParams[NUM_THREADS];
-    pthread_attr_t rt_sched_attr[NUM_THREADS];
-    struct sched_param rt_param[NUM_THREADS];
+    pthread_t threads[NUM_THREADS];            //Thread id used for thread referense
+    threadParams_t threadParams[NUM_THREADS];  //Parameter to thread function
+    pthread_attr_t rt_sched_attr[NUM_THREADS]; // Thread scheduling attributes instead of inheriting
     struct sched_param main_param;
     pthread_attr_t main_attr;
 
@@ -93,17 +93,21 @@ int main(int argc, char *argv[])
 
     int rt_max_prio = sched_get_priority_max(SCHED_FIFO);
     main_param.sched_priority = rt_max_prio;
+    // Set scheduler for this programs process+6
     if (sched_setscheduler(getpid(), SCHED_FIFO, &main_param) < 0)
         perror("******** WARNING: sched_setscheduler");
 
     for (int i = 0; i < NUM_THREADS; i++)
     {
-        pthread_attr_init(&rt_sched_attr[i]);
+        pthread_attr_init(&rt_sched_attr[i]); // default initialization
+        //Use scheduling attributes instead of inheriting from calling thread
         pthread_attr_setinheritsched(&rt_sched_attr[i], PTHREAD_EXPLICIT_SCHED);
+        // SCHED_FIFO thread becomes runnable, it will always immediately preempt any currently running
+        // SCHED_OTHER, SCHED_BATCH, or SCHED_IDLE thread.
         pthread_attr_setschedpolicy(&rt_sched_attr[i], SCHED_FIFO);
         threadParams[i].threadIdx = i + 1;
         pthread_create(&threads[i],               // pointer to thread descriptor
-                       (void *)0,                 // use default attributes
+                       &rt_sched_attr[i],         // use default attributes
                        runThread,                 // thread function entry point
                        (void *)&(threadParams[i]) // parameters to pass in
         );
