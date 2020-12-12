@@ -44,7 +44,7 @@ int init_logging(void)
     while (fgets(result, STREAM_BUFFER_SIZE, cmd) != NULL)
         ; //reads the result from the command and stores it in the variable result
     pclose(cmd);
-    syslog(LOG_INFO, result);
+    syslog(LOG_INFO, "%s\n", result);
 
     return 0;
 }
