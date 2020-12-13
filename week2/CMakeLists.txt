@@ -10,3 +10,18 @@ target_compile_options(${TARGET} PUBLIC -O0 -g)
 target_compile_definitions(${TARGET} PUBLIC _GNU_SOURCE)
 target_link_libraries(${TARGET} -pthread)
 
+set(TARGET RT-Clock)
+add_executable(${TARGET}
+                ${TARGET}/posix_clock.c)
+
+target_compile_options(${TARGET} PUBLIC -O0 -g)
+target_compile_definitions(${TARGET} PUBLIC)
+target_link_libraries(${TARGET} -pthread)
+
+set(TARGET simplethread-affinity)
+add_executable(${TARGET}
+                ${TARGET}/pthread.c)
+
+target_compile_options(${TARGET} PUBLIC -O0 -g)
+target_compile_definitions(${TARGET} PUBLIC)
+target_link_libraries(${TARGET} -pthread)
