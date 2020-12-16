@@ -179,7 +179,7 @@ void *delay_test(void *threadID)
   struct timespec rtclk_resolution;
 
   sleep_count = 0;
-
+  // Get resolution of clock
   if (clock_getres(MY_CLOCK, &rtclk_resolution) == ERROR)
   {
     perror("clock_getres");
@@ -209,7 +209,7 @@ void *delay_test(void *threadID)
     {
       if (result_code = nanosleep(&sleep_time, &remaining_time) == 0)
         break;
-
+      // If nanosleep gets interrupted early, resleep remainig time
       sleep_time.tv_sec = remaining_time.tv_sec;
       sleep_time.tv_nsec = remaining_time.tv_nsec;
       sleep_count++;
@@ -227,7 +227,7 @@ void *delay_test(void *threadID)
 pthread_t main_thread;
 pthread_attr_t main_sched_attr;
 int rt_max_prio, rt_min_prio;
-struct sched_param main_param;
+struct sched_param main_param; // Priority only
 
 void main(void)
 {
@@ -237,15 +237,15 @@ void main(void)
   print_scheduler();
 
 #ifdef RUN_RT_THREAD
-  pthread_attr_init(&main_sched_attr);
-  pthread_attr_setinheritsched(&main_sched_attr, PTHREAD_EXPLICIT_SCHED);
+  pthread_attr_init(&main_sched_attr);                                    // Populate attr with default values
+  pthread_attr_setinheritsched(&main_sched_attr, PTHREAD_EXPLICIT_SCHED); // Don't inherit, use attr
   pthread_attr_setschedpolicy(&main_sched_attr, SCHED_FIFO);
 
   rt_max_prio = sched_get_priority_max(SCHED_FIFO);
   rt_min_prio = sched_get_priority_min(SCHED_FIFO);
 
   main_param.sched_priority = rt_max_prio;
-  result_code = sched_setscheduler(getpid(), SCHED_FIFO, &main_param);
+  result_code = sched_setscheduler(getpid(), SCHED_FIFO, &main_param); // Set cheduler for main
 
   if (result_code)
   {
@@ -263,7 +263,6 @@ void main(void)
   printf("After adjustments to scheduling policy:\n");
   print_scheduler();
 
-  main_param.sched_priority = rt_max_prio;
   pthread_attr_setschedparam(&main_sched_attr, &main_param);
 
   result_code = pthread_create(&main_thread, &main_sched_attr, delay_test, (void *)0);

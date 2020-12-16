@@ -1,0 +1,368 @@
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: Linux raspberrypi 4.14.79-v7+ #1159 SMP Sun Nov 4 17:50:20 GMT 2018 armv7l GNU/Linux
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012#012POSIX Clock demo using system RT clock with resolution:#012#0110 secs, 0 microsecs, 1 nanosecs
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 0
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10048, nsec=10048281, sec=0.010048281
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 48281
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 1
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10045, nsec=10045000, sec=0.010045000
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 45000
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 2
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10055, nsec=10055053, sec=0.010055053
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 55053
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 3
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10080, nsec=10080052, sec=0.010080052
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 80052
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 4
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10067, nsec=10067760, sec=0.010067760
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 67760
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 5
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10060, nsec=10060625, sec=0.010060625
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 60625
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 6
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10079, nsec=10079740, sec=0.010079740
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 79740
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 7
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10048, nsec=10048125, sec=0.010048125
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 48125
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 8
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10035, nsec=10035208, sec=0.010035208
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 35208
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 9
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10045, nsec=10045833, sec=0.010045833
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 45833
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 10
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10037, nsec=10037865, sec=0.010037865
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 37865
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 11
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10042, nsec=10042084, sec=0.010042084
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 42084
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 12
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10042, nsec=10042656, sec=0.010042656
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 42656
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 13
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10024, nsec=10024583, sec=0.010024583
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 24583
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 14
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022031, sec=0.010022031
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22031
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 15
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020886, sec=0.010020886
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20886
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 16
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021667, sec=0.010021667
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21667
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 17
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10025, nsec=10025469, sec=0.010025469
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 25469
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 18
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023229, sec=0.010023229
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23229
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 19
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020468, sec=0.010020468
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20468
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 20
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023646, sec=0.010023646
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23646
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 21
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10024, nsec=10024896, sec=0.010024896
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 24896
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 22
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10024, nsec=10024427, sec=0.010024427
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 24427
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 23
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021354, sec=0.010021354
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21354
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 24
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10025, nsec=10025729, sec=0.010025729
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 25729
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 25
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021771, sec=0.010021771
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21771
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 26
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021771, sec=0.010021771
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21771
+Dec 13 18:15:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 27
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023333, sec=0.010023333
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23333
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 28
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10025, nsec=10025521, sec=0.010025521
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 25521
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 29
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021771, sec=0.010021771
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21771
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 30
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023385, sec=0.010023385
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23385
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 31
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10029, nsec=10029948, sec=0.010029948
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 29948
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 32
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021927, sec=0.010021927
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21927
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 33
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022969, sec=0.010022969
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22969
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 34
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10017, nsec=10017761, sec=0.010017761
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 17761
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 35
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10024, nsec=10024844, sec=0.010024844
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 24844
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 36
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020625, sec=0.010020625
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20625
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 37
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023177, sec=0.010023177
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23177
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 38
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023490, sec=0.010023490
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23490
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 39
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023541, sec=0.010023541
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23541
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 40
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022448, sec=0.010022448
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22448
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 41
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021354, sec=0.010021354
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21354
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 42
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10029, nsec=10029114, sec=0.010029114
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 29114
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 43
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10026, nsec=10026511, sec=0.010026511
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 26511
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 44
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10024, nsec=10024167, sec=0.010024167
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 24167
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 45
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022968, sec=0.010022968
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22968
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 46
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10024, nsec=10024479, sec=0.010024479
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 24479
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 47
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10019, nsec=10019896, sec=0.010019896
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 19896
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 48
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021511, sec=0.010021511
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21511
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 49
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020469, sec=0.010020469
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20469
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 50
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020573, sec=0.010020573
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20573
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 51
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023021, sec=0.010023021
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23021
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 52
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021823, sec=0.010021823
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21823
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 53
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10025, nsec=10025521, sec=0.010025521
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 25521
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 54
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020521, sec=0.010020521
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20521
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 55
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021823, sec=0.010021823
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21823
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 56
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10028, nsec=10028229, sec=0.010028229
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 28229
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 57
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020105, sec=0.010020105
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20105
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 58
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021406, sec=0.010021406
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21406
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 59
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10019, nsec=10019167, sec=0.010019167
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 19167
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 60
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10024, nsec=10024584, sec=0.010024584
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 24584
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 61
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023438, sec=0.010023438
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23438
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 62
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020885, sec=0.010020885
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20885
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 63
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10026, nsec=10026614, sec=0.010026614
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 26614
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 64
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022657, sec=0.010022657
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22657
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 65
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021823, sec=0.010021823
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21823
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 66
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022396, sec=0.010022396
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22396
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 67
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10027, nsec=10027813, sec=0.010027813
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 27813
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 68
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022865, sec=0.010022865
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22865
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 69
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023385, sec=0.010023385
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23385
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 70
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023697, sec=0.010023697
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23697
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 71
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10019, nsec=10019844, sec=0.010019844
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 19844
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 72
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10017, nsec=10017240, sec=0.010017240
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 17240
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 73
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020052, sec=0.010020052
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20052
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 74
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10025, nsec=10025365, sec=0.010025365
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 25365
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 75
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020990, sec=0.010020990
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20990
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 76
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020260, sec=0.010020260
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20260
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 77
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10043, nsec=10043333, sec=0.010043333
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 43333
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 78
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10051, nsec=10051667, sec=0.010051667
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 51667
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 79
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10044, nsec=10044063, sec=0.010044063
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 44063
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 80
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10046, nsec=10046354, sec=0.010046354
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 46354
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 81
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10042, nsec=10042187, sec=0.010042187
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 42187
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 82
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10048, nsec=10048907, sec=0.010048907
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 48907
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 83
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10039, nsec=10039375, sec=0.010039375
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 39375
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 84
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10041, nsec=10041146, sec=0.010041146
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 41146
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 85
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10042, nsec=10042865, sec=0.010042865
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 42865
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 86
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10038, nsec=10038021, sec=0.010038021
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 38021
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 87
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022708, sec=0.010022708
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22708
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 88
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10021, nsec=10021928, sec=0.010021928
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 21928
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 89
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023855, sec=0.010023855
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23855
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 90
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022552, sec=0.010022552
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22552
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 91
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022917, sec=0.010022917
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22917
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 92
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022083, sec=0.010022083
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22083
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 93
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10024, nsec=10024583, sec=0.010024583
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 24583
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 94
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020677, sec=0.010020677
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20677
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 95
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022865, sec=0.010022865
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22865
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 96
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10023, nsec=10023437, sec=0.010023437
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 23437
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 97
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020573, sec=0.010020573
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20573
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 98
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10020, nsec=10020156, sec=0.010020156
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 20156
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: test 99
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK clock DT seconds = 0, msec=10, usec=10022, nsec=10022864, sec=0.010022864
+Dec 13 18:15:29 raspberrypi [COURSE:1][ASSIGNMENT:4]: MY_CLOCK delay error = 0, nanoseconds = 22864
+Dec 13 18:15:40 raspberrypi [COURSE:1][ASSIGNMENT:4]: Linux raspberrypi 4.14.79-v7+ #1159 SMP Sun Nov 4 17:50:20 GMT 2018 armv7l GNU/Linux
+Dec 13 18:15:40 raspberrypi [COURSE:1][ASSIGNMENT:4]: starter thread running on CPU=3
+Dec 13 18:15:40 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=0, sum[0...0]=0, running on CPU=3, start=1607879740.336960, stop=1607879740.367073
+Dec 13 18:15:41 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=3, sum[0...3]=6, running on CPU=3, start=1607879740.502622, stop=1607879740.607800
+Dec 13 18:15:41 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=4, sum[0...4]=10, running on CPU=3, start=1607879740.607860, stop=1607879740.738064
+Dec 13 18:15:41 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=5, sum[0...5]=15, running on CPU=3, start=1607879740.738557, stop=1607879740.896070
+Dec 13 18:15:41 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=1, sum[0...1]=1, running on CPU=3, start=1607879740.367174, stop=1607879740.422304
+Dec 13 18:15:42 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=2, sum[0...2]=3, running on CPU=3, start=1607879740.422407, stop=1607879740.502553
+Dec 13 18:15:42 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=6, sum[0...6]=21, running on CPU=3, start=1607879740.897974, stop=1607879741.078405
+Dec 13 18:15:42 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=8, sum[0...8]=36, running on CPU=3, start=1607879741.285069, stop=1607879741.529804
+Dec 13 18:15:43 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=7, sum[0...7]=28, running on CPU=3, start=1607879741.079043, stop=1607879741.284416
+Dec 13 18:15:43 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=9, sum[0...9]=45, running on CPU=3, start=1607879741.530664, stop=1607879741.802944
+Dec 13 18:15:43 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=10, sum[0...10]=55, running on CPU=3, start=1607879741.803709, stop=1607879742.100998
+Dec 13 18:15:44 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=11, sum[0...11]=66, running on CPU=3, start=1607879742.101818, stop=1607879742.424312
+Dec 13 18:15:44 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=12, sum[0...12]=78, running on CPU=3, start=1607879742.424972, stop=1607879742.773099
+Dec 13 18:15:45 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=13, sum[0...13]=91, running on CPU=3, start=1607879742.773799, stop=1607879743.147417
+Dec 13 18:15:45 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=14, sum[0...14]=105, running on CPU=3, start=1607879743.148036, stop=1607879743.545558
+Dec 13 18:15:46 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=15, sum[0...15]=120, running on CPU=3, start=1607879743.546194, stop=1607879743.968532
+Dec 13 18:15:47 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=16, sum[0...16]=136, running on CPU=3, start=1607879743.969152, stop=1607879744.416639
+Dec 13 18:15:47 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=17, sum[0...17]=153, running on CPU=3, start=1607879744.417320, stop=1607879744.891880
+Dec 13 18:15:48 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=18, sum[0...18]=171, running on CPU=3, start=1607879744.892590, stop=1607879745.390171
+Dec 13 18:15:48 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=19, sum[0...19]=190, running on CPU=3, start=1607879745.390844, stop=1607879745.913394
+Dec 13 18:15:49 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=20, sum[0...20]=210, running on CPU=3, start=1607879745.914045, stop=1607879746.461755
+Dec 13 18:15:50 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=21, sum[0...21]=231, running on CPU=3, start=1607879746.462365, stop=1607879747.037097
+Dec 13 18:15:51 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=22, sum[0...22]=253, running on CPU=3, start=1607879747.037776, stop=1607879747.635509
+Dec 13 18:15:51 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=23, sum[0...23]=276, running on CPU=3, start=1607879747.636220, stop=1607879748.259114
+Dec 13 18:15:52 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=24, sum[0...24]=300, running on CPU=3, start=1607879748.259729, stop=1607879748.909498
+Dec 13 18:15:53 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=25, sum[0...25]=325, running on CPU=3, start=1607879748.910118, stop=1607879749.583101
+Dec 13 18:15:54 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=26, sum[0...26]=351, running on CPU=3, start=1607879749.583793, stop=1607879750.281984
+Dec 13 18:15:55 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=27, sum[0...27]=378, running on CPU=3, start=1607879750.282674, stop=1607879751.007651
+Dec 13 18:15:55 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=28, sum[0...28]=406, running on CPU=3, start=1607879751.008271, stop=1607879751.756108
+Dec 13 18:15:57 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=29, sum[0...29]=435, running on CPU=3, start=1607879751.756718, stop=1607879752.529762
+Dec 13 18:15:58 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=30, sum[0...30]=465, running on CPU=3, start=1607879752.530457, stop=1607879753.330727
+Dec 13 18:15:59 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=31, sum[0...31]=496, running on CPU=3, start=1607879753.331446, stop=1607879754.154827
+Dec 13 18:16:00 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=32, sum[0...32]=528, running on CPU=3, start=1607879754.155542, stop=1607879755.006050
+Dec 13 18:16:01 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=33, sum[0...33]=561, running on CPU=3, start=1607879755.006739, stop=1607879755.879863
+Dec 13 18:16:02 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=34, sum[0...34]=595, running on CPU=3, start=1607879755.880563, stop=1607879756.779562
+Dec 13 18:16:03 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=35, sum[0...35]=630, running on CPU=3, start=1607879756.780427, stop=1607879757.705008
+Dec 13 18:16:04 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=36, sum[0...36]=666, running on CPU=3, start=1607879757.705635, stop=1607879758.653817
+Dec 13 18:16:06 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=37, sum[0...37]=703, running on CPU=3, start=1607879758.654502, stop=1607879759.630050
+Dec 13 18:16:07 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=38, sum[0...38]=741, running on CPU=3, start=1607879759.630700, stop=1607879760.629051
+Dec 13 18:16:08 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=39, sum[0...39]=780, running on CPU=3, start=1607879760.629752, stop=1607879761.655207
+Dec 13 18:16:09 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=40, sum[0...40]=820, running on CPU=3, start=1607879761.655891, stop=1607879762.704392
+Dec 13 18:16:10 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=41, sum[0...41]=861, running on CPU=3, start=1607879762.705016, stop=1607879763.780534
+Dec 13 18:16:12 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=42, sum[0...42]=903, running on CPU=3, start=1607879763.781261, stop=1607879764.881912
+Dec 13 18:16:13 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=43, sum[0...43]=946, running on CPU=3, start=1607879764.882636, stop=1607879766.006247
+Dec 13 18:16:14 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=44, sum[0...44]=990, running on CPU=3, start=1607879766.006890, stop=1607879767.157698
+Dec 13 18:16:15 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=45, sum[0...45]=1035, running on CPU=3, start=1607879767.158404, stop=1607879768.332024
+Dec 13 18:16:17 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=46, sum[0...46]=1081, running on CPU=3, start=1607879768.332764, stop=1607879769.533542
+Dec 13 18:16:18 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=47, sum[0...47]=1128, running on CPU=3, start=1607879769.534161, stop=1607879770.757945
+Dec 13 18:16:20 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=48, sum[0...48]=1176, running on CPU=3, start=1607879770.758623, stop=1607879772.009553
+Dec 13 18:16:21 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=49, sum[0...49]=1225, running on CPU=3, start=1607879772.010257, stop=1607879773.286148
+Dec 13 18:16:22 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=50, sum[0...50]=1275, running on CPU=3, start=1607879773.286803, stop=1607879774.585697
+Dec 13 18:16:24 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=51, sum[0...51]=1326, running on CPU=3, start=1607879774.586392, stop=1607879775.912241
+Dec 13 18:16:25 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=52, sum[0...52]=1378, running on CPU=3, start=1607879775.912951, stop=1607879777.263830
+Dec 13 18:16:27 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=53, sum[0...53]=1431, running on CPU=3, start=1607879777.264541, stop=1607879778.638464
+Dec 13 18:16:28 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=54, sum[0...54]=1485, running on CPU=3, start=1607879778.639093, stop=1607879780.040110
+Dec 13 18:16:30 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=55, sum[0...55]=1540, running on CPU=3, start=1607879780.040805, stop=1607879781.466819
+Dec 13 18:16:32 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=56, sum[0...56]=1596, running on CPU=3, start=1607879781.467518, stop=1607879782.918503
+Dec 13 18:16:33 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=57, sum[0...57]=1653, running on CPU=3, start=1607879782.919159, stop=1607879784.393188
+Dec 13 18:16:33 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=58, sum[0...58]=1711, running on CPU=3, start=1607879784.393896, stop=1607879785.895095
+Dec 13 18:16:33 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=59, sum[0...59]=1770, running on CPU=3, start=1607879785.895809, stop=1607879787.422041
+Dec 13 18:16:33 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=60, sum[0...60]=1830, running on CPU=3, start=1607879787.422672, stop=1607879788.973843
+Dec 13 18:16:33 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=61, sum[0...61]=1891, running on CPU=3, start=1607879788.974489, stop=1607879790.548632
+Dec 13 18:16:33 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=62, sum[0...62]=1953, running on CPU=3, start=1607879790.549330, stop=1607879792.150738
+Dec 13 18:16:33 raspberrypi [COURSE:1][ASSIGNMENT:4]: #012Thread idx=63, sum[0...63]=2016, running on CPU=3, start=1607879792.151466, stop=1607879793.777825
