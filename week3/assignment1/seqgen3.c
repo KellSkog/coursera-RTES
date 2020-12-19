@@ -46,19 +46,19 @@
 // clock (and physical process), the user space approach should provide sufficient accuracy required and
 // precision which is limited by our camera frame rate to 30 Hz anyway (33.33 msec).
 //
-// Sequencer - 1 Hz
+// Sequencer - 100 Hz
 //                   [gives semaphores to all other services]
-// Service_1 - 1/2 Hz, every other Sequencer loop
-// Service_2 - 1/5 Hz, every 5th Sequencer loop
-// Service_3 - 1/15 Hz ,every 15th Sequencer loop
+// Service_1 - 50 Hz, every other Sequencer loop
+// Service_2 - 10 Hz, every 10th Sequencer loop
+// Service_3 - 100/15 Hz ,every 15th Sequencer loop
 
 //
 // With the above, priorities by RM policy would be:
 //
-// Sequencer = RT_MAX	@ 1 Hz
-// Servcie_1 = RT_MAX-1	@ 1/2  Hz
-// Service_2 = RT_MAX-2	@ 1/5  Hz
-// Service_3 = RT_MAX-3	@ 1/15  Hz
+// Sequencer = RT_MAX	@ 100 Hz
+// Servcie_1 = RT_MAX-1	@ 50  Hz
+// Service_2 = RT_MAX-2	@ 10  Hz
+// Service_3 = RT_MAX-3	@ 100/15  Hz
 
 //
 // Here are a few hardware/platform configuration settings on your Jetson
@@ -117,8 +117,8 @@
 //#define MY_CLOCK_TYPE CLOCK_MONTONIC_COARSE
 
 int abortTest = FALSE;
-int abortS1 = FALSE, abortS2 = FALSE, abortS3 = FALSE; //, abortS4 = FALSE, abortS5 = FALSE, abortS6 = FALSE, abortS7 = FALSE;
-sem_t semS1, semS2, semS3;                             //, semS4, semS5, semS6, semS7;
+int abortS1 = FALSE, abortS2 = FALSE, abortS3 = FALSE;
+sem_t semS1, semS2, semS3;
 struct timespec start_time_val;
 double start_realtime;
 unsigned long long sequencePeriods;
@@ -139,10 +139,6 @@ void Sequencer(int id);
 void *Service_1(void *threadp);
 void *Service_2(void *threadp);
 void *Service_3(void *threadp);
-// void *Service_4(void *threadp);
-// void *Service_5(void *threadp);
-// void *Service_6(void *threadp);
-// void *Service_7(void *threadp);
 
 double getTimeMsec(void);
 double realtime(struct timespec *tsptr);
@@ -163,13 +159,34 @@ void print_scheduler(void);
 // "sudo apt-get install adjtimex" for an interesting utility to adjust your system clock
 //
 //
+void setup_timer(void)
+{
+    // Sequencer = RT_MAX	@ 100 Hz
+    //
+    /* set up to signal SIGALRM if timer expires */
+    timer_create(CLOCK_REALTIME, NULL, &timer_1);
+
+    signal(SIGALRM, (void (*)())Sequencer);
+
+    /* arm the interval timer */
+    // Initial value
+    itime.it_interval.tv_sec = 0;
+    itime.it_interval.tv_nsec = 10000000;
+    // Reset value
+    itime.it_value.tv_sec = 0;
+    itime.it_value.tv_nsec = 10000000;
+    // itime.it_interval.tv_sec = 1;
+    // itime.it_interval.tv_nsec = 0;
+    // itime.it_value.tv_sec = 1;
+    // itime.it_value.tv_nsec = 0;
+}
 
 void main(void)
 {
     struct timespec current_time_val, current_time_res;
     double current_realtime, current_realtime_res;
 
-    int i, rc, scope, flags = 0;
+    int i, result_code, scope, flags = 0;
 
     cpu_set_t threadcpu;
     cpu_set_t allcpuset;
@@ -227,10 +244,10 @@ void main(void)
     rt_max_prio = sched_get_priority_max(SCHED_FIFO);
     rt_min_prio = sched_get_priority_min(SCHED_FIFO);
 
-    rc = sched_getparam(mainpid, &main_param);
-    main_param.sched_priority = rt_max_prio;
-    rc = sched_setscheduler(getpid(), SCHED_FIFO, &main_param);
-    if (rc < 0)
+    result_code = sched_getparam(mainpid, &main_param);
+    main_param.sched_priority = rt_max_prio; // Give main (Scheduler) max prio
+    result_code = sched_setscheduler(getpid(), SCHED_FIFO, &main_param);
+    if (result_code < 0)
         perror("main_param");
     print_scheduler();
 
@@ -265,10 +282,10 @@ void main(void)
             CPU_SET(cpuidx, &threadcpu);
         }
 
-        rc = pthread_attr_init(&rt_sched_attr[i]);
-        rc = pthread_attr_setinheritsched(&rt_sched_attr[i], PTHREAD_EXPLICIT_SCHED);
-        rc = pthread_attr_setschedpolicy(&rt_sched_attr[i], SCHED_FIFO);
-        rc = pthread_attr_setaffinity_np(&rt_sched_attr[i], sizeof(cpu_set_t), &threadcpu);
+        result_code = pthread_attr_init(&rt_sched_attr[i]);
+        result_code = pthread_attr_setinheritsched(&rt_sched_attr[i], PTHREAD_EXPLICIT_SCHED);
+        result_code = pthread_attr_setschedpolicy(&rt_sched_attr[i], SCHED_FIFO);
+        result_code = pthread_attr_setaffinity_np(&rt_sched_attr[i], sizeof(cpu_set_t), &threadcpu);
 
         rt_param[i].sched_priority = rt_max_prio - i;
         pthread_attr_setschedparam(&rt_sched_attr[i], &rt_param[i]);
@@ -285,13 +302,13 @@ void main(void)
     //
     rt_param[0].sched_priority = rt_max_prio - 1;
     pthread_attr_setschedparam(&rt_sched_attr[0], &rt_param[0]);
-    rc = pthread_create(&threads[0],       // pointer to thread descriptor
-                        &rt_sched_attr[0], // use specific attributes
-                        //(void *)0,               // default attributes
-                        Service_1,                 // thread function entry point
-                        (void *)&(threadParams[0]) // parameters to pass in
+    result_code = pthread_create(&threads[0],       // pointer to thread descriptor
+                                 &rt_sched_attr[0], // use specific attributes
+                                 //(void *)0,               // default attributes
+                                 Service_1,                 // thread function entry point
+                                 (void *)&(threadParams[0]) // parameters to pass in
     );
-    if (rc < 0)
+    if (result_code < 0)
         perror("pthread_create for service 1");
     else
         printf("pthread_create successful for service 1\n");
@@ -300,8 +317,8 @@ void main(void)
     //
     rt_param[1].sched_priority = rt_max_prio - 2;
     pthread_attr_setschedparam(&rt_sched_attr[1], &rt_param[1]);
-    rc = pthread_create(&threads[1], &rt_sched_attr[1], Service_2, (void *)&(threadParams[1]));
-    if (rc < 0)
+    result_code = pthread_create(&threads[1], &rt_sched_attr[1], Service_2, (void *)&(threadParams[1]));
+    if (result_code < 0)
         perror("pthread_create for service 2");
     else
         printf("pthread_create successful for service 2\n");
@@ -310,8 +327,8 @@ void main(void)
     //
     rt_param[2].sched_priority = rt_max_prio - 3;
     pthread_attr_setschedparam(&rt_sched_attr[2], &rt_param[2]);
-    rc = pthread_create(&threads[2], &rt_sched_attr[2], Service_3, (void *)&(threadParams[2]));
-    if (rc < 0)
+    result_code = pthread_create(&threads[2], &rt_sched_attr[2], Service_3, (void *)&(threadParams[2]));
+    if (result_code < 0)
         perror("pthread_create for service 3");
     else
         printf("pthread_create successful for service 3\n");
@@ -328,28 +345,13 @@ void main(void)
     printf("Start sequencer\n");
     sequencePeriods = 20;
 
-    // Sequencer = RT_MAX	@ 100 Hz
-    //
-    /* set up to signal SIGALRM if timer expires */
-    timer_create(CLOCK_REALTIME, NULL, &timer_1);
-
-    signal(SIGALRM, (void (*)())Sequencer);
-
-    /* arm the interval timer */
-    // itime.it_interval.tv_sec = 0;
-    // itime.it_interval.tv_nsec = 10000000;
-    // itime.it_value.tv_sec = 0;
-    // itime.it_value.tv_nsec = 10000000;
-    itime.it_interval.tv_sec = 1;
-    itime.it_interval.tv_nsec = 0;
-    itime.it_value.tv_sec = 1;
-    itime.it_value.tv_nsec = 0;
+    setup_timer();
 
     timer_settime(timer_1, flags, &itime, &last_itime);
 
     for (i = 0; i < NUM_THREADS; i++)
     {
-        if (rc = pthread_join(threads[i], NULL) < 0)
+        if (result_code = pthread_join(threads[i], NULL) < 0)
             perror("main pthread_join");
         else
             printf("joined thread %d\n", i);
@@ -362,7 +364,7 @@ void Sequencer(int id)
 {
     struct timespec current_time_val;
     double current_realtime;
-    int rc, flags = 0;
+    int result_code, flags = 0;
 
     // received interval timer signal
 
@@ -373,16 +375,16 @@ void Sequencer(int id)
     //syslog(LOG_CRIT, "Sequencer on core %d for cycle %llu @ sec=%6.9lf\n", sched_getcpu(), seqCnt, current_realtime-start_realtime);
 
     // Release each service at a sub-rate of the generic sequencer rate
-
-    // Servcie_1 = RT_MAX-1	@ 1/2 Hz
+    //
+    // Servcie_1 = RT_MAX-1	@ 50 Hz
     if ((seqCnt % 2) == 0)
         sem_post(&semS1);
 
-    // Service_2 = RT_MAX-2	@ 1/5 Hz
-    if ((seqCnt % 5) == 0)
+    // Service_2 = RT_MAX-2	@ 10 Hz
+    if ((seqCnt % 10) == 0)
         sem_post(&semS2);
 
-    // Service_3 = RT_MAX-3	@ 1/15 Hz
+    // Service_3 = RT_MAX-3	@ 100/15 Hz
     if ((seqCnt % 15) == 0)
         sem_post(&semS3);
 
@@ -414,7 +416,7 @@ void *Service_1(void *threadp)
     unsigned long long S1Cnt = 0;
     threadParams_t *threadParams = (threadParams_t *)threadp;
 
-    // Start up processing and resource initialization
+    // Start up processing and resouresult_codee initialization
     clock_gettime(MY_CLOCK_TYPE, &current_time_val);
     current_realtime = realtime(&current_time_val);
     syslog(LOG_CRIT, "S1 thread @ sec=%6.9lf\n", current_realtime - start_realtime);
@@ -435,7 +437,7 @@ void *Service_1(void *threadp)
         syslog(LOG_CRIT, "S1 50 Hz on core %d for release %llu @ sec=%6.9lf\n", sched_getcpu(), S1Cnt, current_realtime - start_realtime);
     }
 
-    // Resource shutdown here
+    // Resouresult_codee shutdown here
     //
     pthread_exit((void *)0);
 }
