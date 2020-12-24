@@ -1,8 +1,3 @@
-/*
-The goal of this peer review is to comment existing code examples, 
-single step debug them (with nemiver or ddd), practice adding syslog tracing and 
-then explain your updated version to your peers.
-*/
 #define _GNU_SOURCE
 #include <pthread.h>
 #include <stdio.h>
@@ -10,15 +5,15 @@ then explain your updated version to your peers.
 #include <errno.h>
 #include <sys/time.h>
 #include <sys/types.h>
-#include <sched.h>
 #include <unistd.h>
-#include "syslogger.h"
+#include <sched.h>
+#include "syslog.h"
 
-// Defines
 #define NUM_THREADS 128
 #define NUM_CPUS 4
-#define SCHED_POLICY SCHED_FIFO
-#define MAX_ITERATIONS (1000000)
+
+// Buffer to capture result of shell command
+#define STREAM_BUFFER_SIZE 100
 
 typedef struct
 {
@@ -35,6 +30,8 @@ threadParams_t threadParams[NUM_THREADS];
 pthread_attr_t fifo_sched_attr;
 pthread_attr_t orig_sched_attr;
 struct sched_param fifo_param;
+
+#define SCHED_POLICY SCHED_FIFO
 
 void print_scheduler(void)
 {
@@ -56,23 +53,18 @@ void print_scheduler(void)
     }
 }
 
-// Change scheduling policy, to start a thread with RT scheduler, the calling
-// thread first needs to switch to a RT scheduling policy
 void set_scheduler(void)
 {
-    int max_prio, result_code, cpuidx;
+    int max_prio, scope, result_code, cpuidx;
     cpu_set_t cpuset;
 
     printf("INITIAL ");
     print_scheduler();
 
-    // Change scheduler
     pthread_attr_init(&fifo_sched_attr);
     pthread_attr_setinheritsched(&fifo_sched_attr, PTHREAD_EXPLICIT_SCHED);
     pthread_attr_setschedpolicy(&fifo_sched_attr, SCHED_POLICY);
-
-    // Change sets of cores available for scheduler
-    CPU_ZERO(&cpuset); // clear set of cores available for scheduler
+    CPU_ZERO(&cpuset);
     cpuidx = (3);
     CPU_SET(cpuidx, &cpuset);
     pthread_attr_setaffinity_np(&fifo_sched_attr, sizeof(cpu_set_t), &cpuset);
@@ -91,40 +83,29 @@ void set_scheduler(void)
 
 void *counterThread(void *threadp)
 {
-    int sum = 0, i, result_code, iterations;
     threadParams_t *threadParams = (threadParams_t *)threadp;
-    pthread_t mythread;
-    double start = 0.0, stop = 0.0;
-    struct timeval startTime, stopTime;
 
-    gettimeofday(&startTime, 0);
-    start = ((startTime.tv_sec * 1000000.0) + startTime.tv_usec) / 1000000.0;
+    int sum = 0;
+    for (int i = 1; i <= (threadParams->threadIdx); i++)
+        sum = sum + i;
 
-    for (iterations = 0; iterations < MAX_ITERATIONS; iterations++)
-    {
-        sum = 0;
-        for (i = 1; i < (threadParams->threadIdx) + 1; i++)
-            sum = sum + i;
-    }
+    // gettimeofday(&stopTime, 0);
+    // stop = ((stopTime.tv_sec * 1000000.0) + stopTime.tv_usec) / 1000000.0;
 
-    gettimeofday(&stopTime, 0);
-    stop = ((stopTime.tv_sec * 1000000.0) + stopTime.tv_usec) / 1000000.0;
-
-    syslog(LOG_INFO, "\nThread idx=%d, sum[0...%d]=%d, running on CPU=%d, start=%lf, stop=%lf",
+    syslog(LOG_INFO, "Thread idx=%d, sum[1...%d]=%d Running on Core : %d\n",
            threadParams->threadIdx,
-           threadParams->threadIdx, sum, sched_getcpu(),
-           start, stop);
+           threadParams->threadIdx, sum, sched_getcpu());
 }
 
 void *starterThread(void *threadp)
 {
     int i, result_code;
 
-    syslog(LOG_INFO, "starter thread running on CPU=%d\n", sched_getcpu());
+    printf("starter thread running on CPU=%d\n", sched_getcpu());
 
     for (i = 0; i < NUM_THREADS; i++)
     {
-        threadParams[i].threadIdx = i;
+        threadParams[i].threadIdx = i + 1;
 
         pthread_create(&threads[i],               // pointer to thread descriptor
                        &fifo_sched_attr,          // use FIFO RT max priority attributes
@@ -132,15 +113,38 @@ void *starterThread(void *threadp)
                        (void *)&(threadParams[i]) // parameters to pass in
         );
     }
-    // Wait for all counter threads to complete
+
     for (i = 0; i < NUM_THREADS; i++)
         pthread_join(threads[i], NULL);
+}
+
+int init_logging(void)
+{
+    openlog("[COURSE:1][ASSIGNMENT:4]", 0, LOG_USER);
+    FILE *cmd = popen("uname -a", "r"); // Create a file stream capturing output from shell command
+    if (cmd == NULL)
+    {
+        printf("Unable to send command to the shell\n");
+        closelog();
+        return -1;
+    }
+    char result[STREAM_BUFFER_SIZE] = {0x0}; //Initialize buffer with zeroes
+    while (fgets(result, STREAM_BUFFER_SIZE, cmd) != NULL)
+        ; //reads the result from the command and stores it in the variable result
+    pclose(cmd);
+    syslog(LOG_INFO, "%s\n", result);
+
+    return 0;
 }
 
 int main(int argc, char *argv[])
 {
     int result_code;
+    int i, j;
     cpu_set_t cpuset;
+
+    if (init_logging())
+        return -1; // Stop if logging fails
 
     set_scheduler();
 
@@ -157,17 +161,11 @@ int main(int argc, char *argv[])
     {
         printf("main thread running on CPU=%d, CPUs =", sched_getcpu());
 
-        for (int j = 0; j < CPU_SETSIZE; j++)
+        for (j = 0; j < CPU_SETSIZE; j++)
             if (CPU_ISSET(j, &cpuset))
                 printf(" %d", j);
 
         printf("\n");
-    }
-
-    if (init_logging() != 0)
-    {
-        perror("Log initialization failed");
-        exit(-1);
     }
 
     pthread_create(&startthread,     // pointer to thread descriptor
