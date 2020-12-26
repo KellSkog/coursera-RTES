@@ -11,12 +11,17 @@
 #include <fcntl.h>
 #include <time.h>
 
-#define IMG_HEIGHT (9486)
-#define IMG_WIDTH (12649)
-//#define IMG_HEIGHT (3000)
-//#define IMG_WIDTH (4000)
+#ifdef BIG_IMG
+#define IMG_HEIGHT (3000)
+#define IMG_WIDTH (4000)
+#else
+#define IMG_HEIGHT (300)
+#define IMG_WIDTH (400)
+#endif
+// #define IMG_HEIGHT (9486)
+// #define IMG_WIDTH (12649)
 #define IMG_SIZE (IMG_HEIGHT * IMG_WIDTH)
-#define ITERATIONS (10)
+#define ITERATIONS (11)
 
 typedef double FLOAT;
 
@@ -86,17 +91,14 @@ int main(int argc, char *argv[])
     //printf("header = %s\n", header);
 
     // Read RGB data - Very slow one byte at time!
-    for (i = 0; i < 120000; i++)
+    for (i = 0; i < IMG_SIZE; i++)
     {
         read(fdin, (void *)&R[i], 1);
         read(fdin, (void *)&G[i], 1);
         read(fdin, (void *)&B[i], 1);
-        for (int scale = 0; scale < 1000; scale++)
-        {
-            convR[i + scale * 120000] = R[i];
-            convG[i + scale * 120000] = G[i];
-            convB[i + scale * 120000] = B[i];
-        }
+        convR[i] = R[i];
+        convG[i] = G[i];
+        convB[i] = B[i];
     }
 
     clock_gettime(CLOCK_MONOTONIC, &now);

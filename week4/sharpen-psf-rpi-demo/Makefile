@@ -11,7 +11,7 @@ CDEFS=
 CFLAGS= -O3 -mcpu=cortex-a7 -mfpu=neon-vfpv4 $(INCLUDE_DIRS) $(CDEFS)
 LIBS=-lpthread
 
-PRODUCT=sharpen_grid sharpen
+PRODUCT=sharpen_grid sharpen *-big
 
 HFILES= 
 CFILES= sharpen_grid.c sharpen.c
@@ -30,6 +30,12 @@ sharpen_grid:	sharpen_grid.o
 
 sharpen:	sharpen.o
 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ sharpen.o $(LIBS)
+
+sharp-gr-big:	sharpen_grid.c
+	$(CC) -DBIG_IMG $(LDFLAGS) $(CFLAGS) -o $@ $< $(LIBS)
+
+sharp-big:	sharpen.c
+	$(CC) -DBIG_IMG $(LDFLAGS) $(CFLAGS) -o $@ $< $(LIBS)
 
 depend:
 
