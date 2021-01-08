@@ -7,8 +7,8 @@ CDEFS=
 #CFLAGS= -O0 -msse3 -malign-double $(INCLUDE_DIRS) $(CDEFS)
 #CFLAGS= -O2 -msse3 -malign-double $(INCLUDE_DIRS) $(CDEFS)
 #CFLAGS= -O3 -msse3 $(INCLUDE_DIRS) $(CDEFS)
-#CFLAGS= -O3 $(INCLUDE_DIRS) $(CDEFS)
-CFLAGS= -O3 -mcpu=cortex-a7 -mfpu=neon-vfpv4 $(INCLUDE_DIRS) $(CDEFS)
+CFLAGS= -O3 $(INCLUDE_DIRS) $(CDEFS)
+# CFLAGS= -O3 -mcpu=cortex-a7 -mfpu=neon-vfpv4 $(INCLUDE_DIRS) $(CDEFS)
 LIBS=-lpthread
 
 PRODUCT=sharpen_grid sharpen
